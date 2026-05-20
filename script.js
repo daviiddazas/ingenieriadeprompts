@@ -1,8 +1,10 @@
 const cards = document.querySelectorAll('.module-card');
 const searchInput = document.querySelector('#module-search');
+const modalElement = document.querySelector('#moduleModal');
 const modalTitle = document.querySelector('#moduleModalLabel');
 const modalBody = document.querySelector('#moduleModalBody');
 const modalFooter = document.querySelector('#moduleModalFooter');
+const closeModalButton = document.querySelector('#closeModalButton');
 
 const moduleDetails = {
   'Módulo 1': {
@@ -71,17 +73,10 @@ const moduleDetails = {
   }
 };
 
-if (searchInput) {
-  searchInput.addEventListener('input', (event) => {
-    const query = event.target.value.toLowerCase().trim();
-    cards.forEach((card) => {
-      const title = card.dataset.module.toLowerCase();
-      const description = card.dataset.summary.toLowerCase();
-      const matches = title.includes(query) || description.includes(query);
-      card.parentElement.style.display = matches ? '' : 'none';
-    });
-  });
-}
+const closeModal = () => {
+  modalElement.classList.add('hidden');
+  modalElement.setAttribute('aria-hidden', 'true');
+};
 
 const openModuleModal = (moduleName) => {
   const detail = moduleDetails[moduleName];
@@ -89,17 +84,14 @@ const openModuleModal = (moduleName) => {
 
   modalTitle.textContent = moduleName;
   modalBody.innerHTML = `
-    <p class="mb-3 text-secondary">${detail.subtitle}</p>
-    <ul class="list-unstyled feature-list">
-      ${detail.items.map(item => `<li>• ${item}</li>`).join('')}
+    <p class="text-muted">${detail.subtitle}</p>
+    <ul class="feature-list">
+      ${detail.items.map((item) => `<li>• ${item}</li>`).join('')}
     </ul>
-    <div class="placeholder-box mt-4">
-      <div class="text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" fill="currentColor" class="bi bi-layout-text-sidebar" viewBox="0 0 16 16">
-          <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h13A1.5 1.5 0 0 1 16 3.5v9A1.5 1.5 0 0 1 14.5 14h-13A1.5 1.5 0 0 1 0 12.5v-9ZM1.5 3a.5.5 0 0 0-.5.5V6h15V3.5a.5.5 0 0 0-.5-.5h-13Z"/>
-          <path d="M0 8.5A.5.5 0 0 1 .5 8H5.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm0 2A.5.5 0 0 1 .5 10H5.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm0 2A.5.5 0 0 1 .5 12H5.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Z"/>
-        </svg>
-        <div class="mt-2">Espacio reservado para elemento visual de referencia</div>
+    <div class="placeholder-box" style="margin-top: 1.5rem;">
+      <div style="text-align:center;">
+        <div style="font-size: 2rem;">📄</div>
+        <div style="margin-top: 1rem;">Espacio reservado para elemento visual de referencia</div>
       </div>
     </div>
   `;
@@ -107,11 +99,34 @@ const openModuleModal = (moduleName) => {
   modalFooter.innerHTML = `
     <small class="text-muted">Todos los recursos simulados declarados bajo licencias Creative Commons y código abierto.</small>
   `;
+
+  modalElement.classList.remove('hidden');
+  modalElement.setAttribute('aria-hidden', 'false');
 };
+
+if (searchInput) {
+  searchInput.addEventListener('input', (event) => {
+    const query = event.target.value.toLowerCase().trim();
+    cards.forEach((card) => {
+      const title = card.dataset.module.toLowerCase();
+      const description = card.dataset.summary.toLowerCase();
+      const matches = title.includes(query) || description.includes(query);
+      card.style.display = matches ? '' : 'none';
+    });
+  });
+}
 
 const moduleButtons = document.querySelectorAll('.open-module');
 moduleButtons.forEach((button) => {
   button.addEventListener('click', () => {
     openModuleModal(button.dataset.module);
   });
+});
+
+closeModalButton.addEventListener('click', closeModal);
+modalElement.querySelector('[data-modal-close]').addEventListener('click', closeModal);
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !modalElement.classList.contains('hidden')) {
+    closeModal();
+  }
 });

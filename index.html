@@ -11,255 +11,221 @@ Nombre seleccionado: AulaIA: Laboratorio de Prompts
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AulaIA: Laboratorio de Prompts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaCMsV2x3gzR7Gq7p8e+2nhQ6lJ+si5F6nJYxbyS2LpkaQe1kel3bzf2YtF" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.4/font/bootstrap-icons.css">
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="#">AulaIA</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menú">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link active" href="#hero">Inicio</a></li>
-              <li class="nav-item"><a class="nav-link" href="#modulos">Módulos</a></li>
-              <li class="nav-item"><a class="nav-link" href="#credenciales">Créditos</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">AulaIA</a>
+        <nav class="site-nav" aria-label="Menú principal">
+          <a class="nav-link active" href="#hero">Inicio</a>
+          <a class="nav-link" href="#modulos">Módulos</a>
+          <a class="nav-link" href="#credenciales">Créditos</a>
+        </nav>
+      </div>
     </header>
 
     <main>
       <section id="hero" class="hero-section">
-        <div class="container">
-          <div class="row align-items-center g-4">
-            <div class="col-lg-7">
-              <div class="hero-card p-5 rounded-4">
-                <span class="badge bg-secondary text-white mb-3">Diseño pedagógico con IA</span>
-                <h1 class="hero-title display-5 fw-bold">AulaIA: Laboratorio de Prompts</h1>
-                <p class="lead text-muted">Repositorio diverso de aprendizaje formativo para docentes de Bogotá, con herramientas de prompts, producción hipermedia y ética en IA.</p>
-                <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
-                  <a class="btn btn-primary btn-lg" href="#modulos">Explorar actividades</a>
-                  <a class="btn btn-outline-primary btn-lg" href="#credenciales">Créditos institucionales</a>
-                </div>
-              </div>
+        <div class="container hero-grid">
+          <div class="hero-card hero-copy">
+            <span class="badge">Diseño pedagógico con IA</span>
+            <h1 class="hero-title">AulaIA: Laboratorio de Prompts</h1>
+            <p class="hero-lead">Repositorio diverso de aprendizaje formativo para docentes de Bogotá, con herramientas de prompts, producción hipermedia y ética en IA.</p>
+            <div class="button-row">
+              <a class="btn btn-primary" href="#modulos">Explorar actividades</a>
+              <a class="btn btn-secondary" href="#credenciales">Créditos institucionales</a>
             </div>
-            <div class="col-lg-5">
-              <div class="hero-card p-4 rounded-4 h-100 d-flex flex-column justify-content-between" style="min-height: 320px;">
-                <div>
-                  <h2 class="h4 text-primary">Estructura del Portafolio</h2>
-                  <p class="text-muted">Ocho módulos independientes con guías, talleres y recursos visuales para mejorar la planeación, gestión y diseño curricular con IA.</p>
-                </div>
-                <div class="placeholder-box">
-                  <div class="text-center px-3">
-                    <i class="bi bi-diagram-3 fs-1"></i>
-                    <p class="mb-0 mt-3">Panel visual de progreso y recursos</p>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="hero-card hero-details">
+            <div>
+              <h2 class="section-title">Estructura del Portafolio</h2>
+              <p class="text-muted">Ocho módulos independientes con guías, talleres y recursos visuales para mejorar la planeación, gestión y diseño curricular con IA.</p>
+            </div>
+            <div class="placeholder-box">
+              <div class="hero-icon">📊</div>
+              <p class="placeholder-text">Panel visual de progreso y recursos</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="modulos" class="py-5">
+      <section id="modulos" class="modules-section">
         <div class="container">
-          <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-3 mb-4">
+          <div class="section-header">
             <div>
-              <p class="text-uppercase text-secondary mb-2">Módulos interactivos</p>
-              <h2 class="h3">Ocho experiencias de aprendizaje para docentes</h2>
+              <p class="overline">Módulos interactivos</p>
+              <h2>Ocho experiencias de aprendizaje para docentes</h2>
             </div>
             <div class="search-input">
-              <label class="form-label visually-hidden" for="module-search">Buscar módulo</label>
-              <input id="module-search" class="form-control form-control-lg" type="search" placeholder="Buscar actividad por palabra clave" aria-label="Buscar módulo" />
+              <label class="visually-hidden" for="module-search">Buscar módulo</label>
+              <input id="module-search" class="search-control" type="search" placeholder="Buscar actividad por palabra clave" aria-label="Buscar módulo" />
             </div>
           </div>
 
-          <div class="row g-4">
-            <div class="col-md-6 col-xl-3">
-              <article class="card module-card h-100" data-module="Módulo 1" data-summary="Guía metodológica para la estructura de un Prompt">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3 gap-3">
-                    <div class="module-icon"><i class="bi bi-gem"></i></div>
-                    <div>
-                      <h3 class="h5">Módulo 1</h3>
-                      <p class="text-muted small mb-0">Gema: estructura del prompt.</p>
-                    </div>
+          <div class="module-grid">
+            <article class="module-card" data-module="Módulo 1" data-summary="Guía metodológica para la estructura de un Prompt">
+              <div class="card-content">
+                <div class="module-card-header">
+                  <div class="module-icon">💎</div>
+                  <div>
+                    <h3>Módulo 1</h3>
+                    <p class="text-muted small">Gema: estructura del prompt.</p>
                   </div>
-                  <ul class="list-unstyled mb-4">
-                    <li>Plantilla para planeación.</li>
-                    <li>Ética en la generación de prompts.</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary open-module" data-module="Módulo 1" data-bs-toggle="modal" data-bs-target="#moduleModal">Ver taller</button>
                 </div>
-              </article>
-            </div>
+                <ul class="feature-list">
+                  <li>Plantilla para planeación.</li>
+                  <li>Ética en la generación de prompts.</li>
+                </ul>
+                <button type="button" class="btn btn-outline open-module" data-module="Módulo 1">Ver taller</button>
+              </div>
+            </article>
 
-            <div class="col-md-6 col-xl-3">
-              <article class="card module-card h-100" data-module="Módulo 2" data-summary="Producción Hipermedia con NotebookLM / Google Vids para video educativo">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3 gap-3">
-                    <div class="module-icon"><i class="bi bi-camera-video"></i></div>
-                    <div>
-                      <h3 class="h5">Módulo 2</h3>
-                      <p class="text-muted small mb-0">Video educativo guiado.</p>
-                    </div>
+            <article class="module-card" data-module="Módulo 2" data-summary="Producción Hipermedia con NotebookLM / Google Vids para video educativo">
+              <div class="card-content">
+                <div class="module-card-header">
+                  <div class="module-icon">🎥</div>
+                  <div>
+                    <h3>Módulo 2</h3>
+                    <p class="text-muted small">Video educativo guiado.</p>
                   </div>
-                  <ul class="list-unstyled mb-4">
-                    <li>NotebookLM / Google Vids.</li>
-                    <li>Video de aula centrado en prompts.</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary open-module" data-module="Módulo 2" data-bs-toggle="modal" data-bs-target="#moduleModal">Ver taller</button>
                 </div>
-              </article>
-            </div>
+                <ul class="feature-list">
+                  <li>NotebookLM / Google Vids.</li>
+                  <li>Video de aula centrado en prompts.</li>
+                </ul>
+                <button type="button" class="btn btn-outline open-module" data-module="Módulo 2">Ver taller</button>
+              </div>
+            </article>
 
-            <div class="col-md-6 col-xl-3">
-              <article class="card module-card h-100" data-module="Módulo 3" data-summary="Producción Hipermedia con NoteGPT: guion y pódcast automatizado">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3 gap-3">
-                    <div class="module-icon"><i class="bi bi-mic"></i></div>
-                    <div>
-                      <h3 class="h5">Módulo 3</h3>
-                      <p class="text-muted small mb-0">Guion y pódcast.</p>
-                    </div>
+            <article class="module-card" data-module="Módulo 3" data-summary="Producción Hipermedia con NoteGPT: guion y pódcast automatizado">
+              <div class="card-content">
+                <div class="module-card-header">
+                  <div class="module-icon">🎙️</div>
+                  <div>
+                    <h3>Módulo 3</h3>
+                    <p class="text-muted small">Guion y pódcast.</p>
                   </div>
-                  <ul class="list-unstyled mb-4">
-                    <li>NoteGPT para contenidos.</li>
-                    <li>Pódcast educativo de apoyo.</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary open-module" data-module="Módulo 3" data-bs-toggle="modal" data-bs-target="#moduleModal">Ver taller</button>
                 </div>
-              </article>
-            </div>
+                <ul class="feature-list">
+                  <li>NoteGPT para contenidos.</li>
+                  <li>Pódcast educativo de apoyo.</li>
+                </ul>
+                <button type="button" class="btn btn-outline open-module" data-module="Módulo 3">Ver taller</button>
+              </div>
+            </article>
 
-            <div class="col-md-6 col-xl-3">
-              <article class="card module-card h-100" data-module="Módulo 4" data-summary="Producción Hipermedia Visual con Perplexity, ChatGPT o Gemini">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3 gap-3">
-                    <div class="module-icon"><i class="bi bi-image"></i></div>
-                    <div>
-                      <h3 class="h5">Módulo 4</h3>
-                      <p class="text-muted small mb-0">Visual y portadas didácticas.</p>
-                    </div>
+            <article class="module-card" data-module="Módulo 4" data-summary="Producción Hipermedia Visual con Perplexity, ChatGPT o Gemini">
+              <div class="card-content">
+                <div class="module-card-header">
+                  <div class="module-icon">🖼️</div>
+                  <div>
+                    <h3>Módulo 4</h3>
+                    <p class="text-muted small">Visual y portadas didácticas.</p>
                   </div>
-                  <ul class="list-unstyled mb-4">
-                    <li>Imágenes y diseños open source.</li>
-                    <li>Material visual para docentes.</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary open-module" data-module="Módulo 4" data-bs-toggle="modal" data-bs-target="#moduleModal">Ver taller</button>
                 </div>
-              </article>
-            </div>
+                <ul class="feature-list">
+                  <li>Imágenes y diseños open source.</li>
+                  <li>Material visual para docentes.</li>
+                </ul>
+                <button type="button" class="btn btn-outline open-module" data-module="Módulo 4">Ver taller</button>
+              </div>
+            </article>
 
-            <div class="col-md-6 col-xl-3">
-              <article class="card module-card h-100" data-module="Módulo 5" data-summary="Consensus para validar artículos científicos e investigaciones académicas">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3 gap-3">
-                    <div class="module-icon"><i class="bi bi-book"></i></div>
-                    <div>
-                      <h3 class="h5">Módulo 5</h3>
-                      <p class="text-muted small mb-0">Validación científica.</p>
-                    </div>
+            <article class="module-card" data-module="Módulo 5" data-summary="Consensus para validar artículos científicos e investigaciones académicas">
+              <div class="card-content">
+                <div class="module-card-header">
+                  <div class="module-icon">📚</div>
+                  <div>
+                    <h3>Módulo 5</h3>
+                    <p class="text-muted small">Validación científica.</p>
                   </div>
-                  <ul class="list-unstyled mb-4">
-                    <li>Búsqueda académica con Consensus.</li>
-                    <li>Fuentes revisadas por pares.</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary open-module" data-module="Módulo 5" data-bs-toggle="modal" data-bs-target="#moduleModal">Ver taller</button>
                 </div>
-              </article>
-            </div>
+                <ul class="feature-list">
+                  <li>Búsqueda académica con Consensus.</li>
+                  <li>Fuentes revisadas por pares.</li>
+                </ul>
+                <button type="button" class="btn btn-outline open-module" data-module="Módulo 5">Ver taller</button>
+              </div>
+            </article>
 
-            <div class="col-md-6 col-xl-3">
-              <article class="card module-card h-100" data-module="Módulo 6" data-summary="Mizou / Botpress para diseño e implementación de un Chatbot tutor interactivo">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3 gap-3">
-                    <div class="module-icon"><i class="bi bi-robot"></i></div>
-                    <div>
-                      <h3 class="h5">Módulo 6</h3>
-                      <p class="text-muted small mb-0">Chatbot tutor.</p>
-                    </div>
+            <article class="module-card" data-module="Módulo 6" data-summary="Mizou / Botpress para diseño e implementación de un Chatbot tutor interactivo">
+              <div class="card-content">
+                <div class="module-card-header">
+                  <div class="module-icon">🤖</div>
+                  <div>
+                    <h3>Módulo 6</h3>
+                    <p class="text-muted small">Chatbot tutor.</p>
                   </div>
-                  <ul class="list-unstyled mb-4">
-                    <li>Implementación de Mizou / Botpress.</li>
-                    <li>Atención automatizada en aula.</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary open-module" data-module="Módulo 6" data-bs-toggle="modal" data-bs-target="#moduleModal">Ver taller</button>
                 </div>
-              </article>
-            </div>
+                <ul class="feature-list">
+                  <li>Diseño de tutor virtual con Mizou / Botpress.</li>
+                  <li>Atención automatizada en aula.</li>
+                </ul>
+                <button type="button" class="btn btn-outline open-module" data-module="Módulo 6">Ver taller</button>
+              </div>
+            </article>
 
-            <div class="col-md-6 col-xl-3">
-              <article class="card module-card h-100" data-module="Módulo 7" data-summary="Herramientas Visuales I para infografías educativas con IA">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3 gap-3">
-                    <div class="module-icon"><i class="bi bi-graph-up"></i></div>
-                    <div>
-                      <h3 class="h5">Módulo 7</h3>
-                      <p class="text-muted small mb-0">Infografías educativas.</p>
-                    </div>
+            <article class="module-card" data-module="Módulo 7" data-summary="Herramientas Visuales I para infografías educativas con IA">
+              <div class="card-content">
+                <div class="module-card-header">
+                  <div class="module-icon">📈</div>
+                  <div>
+                    <h3>Módulo 7</h3>
+                    <p class="text-muted small">Infografías educativas.</p>
                   </div>
-                  <ul class="list-unstyled mb-4">
-                    <li>Diseño de recursos visuales.</li>
-                    <li>Comunicación clara de conceptos.</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary open-module" data-module="Módulo 7" data-bs-toggle="modal" data-bs-target="#moduleModal">Ver taller</button>
                 </div>
-              </article>
-            </div>
+                <ul class="feature-list">
+                  <li>Diseño de recursos visuales.</li>
+                  <li>Comunicación clara de conceptos.</li>
+                </ul>
+                <button type="button" class="btn btn-outline open-module" data-module="Módulo 7">Ver taller</button>
+              </div>
+            </article>
 
-            <div class="col-md-6 col-xl-3">
-              <article class="card module-card h-100" data-module="Módulo 8" data-summary="Herramientas Visuales II para mapas conceptuales y diagramas didácticos automatizados">
-                <div class="card-body">
-                  <div class="d-flex align-items-center mb-3 gap-3">
-                    <div class="module-icon"><i class="bi bi-diagram-3-fill"></i></div>
-                    <div>
-                      <h3 class="h5">Módulo 8</h3>
-                      <p class="text-muted small mb-0">Mapas y diagramas.</p>
-                    </div>
+            <article class="module-card" data-module="Módulo 8" data-summary="Herramientas Visuales II para mapas conceptuales y diagramas didácticos automatizados">
+              <div class="card-content">
+                <div class="module-card-header">
+                  <div class="module-icon">🗺️</div>
+                  <div>
+                    <h3>Módulo 8</h3>
+                    <p class="text-muted small">Mapas y diagramas.</p>
                   </div>
-                  <ul class="list-unstyled mb-4">
-                    <li>Mapas conceptuales automatizados.</li>
-                    <li>Diagramas para aprendizaje activo.</li>
-                  </ul>
-                  <button type="button" class="btn btn-outline-primary open-module" data-module="Módulo 8" data-bs-toggle="modal" data-bs-target="#moduleModal">Ver taller</button>
                 </div>
-              </article>
-            </div>
+                <ul class="feature-list">
+                  <li>Mapas conceptuales automatizados.</li>
+                  <li>Diagramas para aprendizaje activo.</li>
+                </ul>
+                <button type="button" class="btn btn-outline open-module" data-module="Módulo 8">Ver taller</button>
+              </div>
+            </article>
           </div>
         </div>
       </section>
     </main>
 
-    <footer id="credenciales" class="py-5">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-md-8">
-            <h3 class="h5 text-white">Maestría en Educación en Tecnología</h3>
-            <p class="text-muted">Universidad Distrital Francisco José de Caldas | Portafolio docente para Bogotá.</p>
-            <p class="text-muted small mb-1">Este proyecto presenta materiales de aprendizaje con licencias Creative Commons y fuentes abiertas. Todas las herramientas sugeridas respetan principios de uso ético y justificación pedagógica.</p>
-            <p class="text-muted small">Citas y referencias basadas en tecnología de IA responsable, producción hipermedia y diseño curricular para educación media.</p>
-          </div>
-          <div class="col-md-4 text-md-end">
-            <p class="mb-1"><strong>Licencia:</strong> Creative Commons CC BY-SA</p>
-            <p class="mb-0"><strong>Derechos:</strong> Recursos simulados para demostración.</p>
-          </div>
+    <footer id="credenciales" class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Maestría en Educación en Tecnología</h3>
+          <p class="text-muted">Universidad Distrital Francisco José de Caldas | Portafolio docente para Bogotá.</p>
+          <p class="small text-muted">Este proyecto presenta materiales de aprendizaje con licencias Creative Commons y fuentes abiertas. Todas las herramientas sugeridas respetan principios de uso ético y justificación pedagógica.</p>
+          <p class="small text-muted">Citas y referencias basadas en tecnología de IA responsable, producción hipermedia y diseño curricular para educación media.</p>
+        </div>
+        <div class="footer-meta">
+          <p><strong>Licencia:</strong> Creative Commons CC BY-SA</p>
+          <p><strong>Derechos:</strong> Recursos simulados para demostración.</p>
         </div>
       </div>
     </footer>
 
-    <div class="modal fade" id="moduleModal" tabindex="-1" aria-labelledby="moduleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content border-0 shadow-lg">
-          <div class="modal-header bg-primary text-white">
-            <h5 class="modal-title" id="moduleModalLabel">Módulo</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+    <div class="modal hidden" id="moduleModal" aria-hidden="true" role="dialog" aria-labelledby="moduleModalLabel">
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="moduleModalLabel">Módulo</h2>
+            <button type="button" class="modal-close" id="closeModalButton" aria-label="Cerrar modal">×</button>
           </div>
           <div class="modal-body" id="moduleModalBody"></div>
           <div class="modal-footer" id="moduleModalFooter"></div>
@@ -267,13 +233,6 @@ Nombre seleccionado: AulaIA: Laboratorio de Prompts
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoH6QZ6QDl4J2t6v3dYf3Yj4hw7jgPNP+Fv8xkaK7+6YU9n" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-
-    //Chatboot
-    
-    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2026/05/12/23/20260512235659-W1QR2397.js" defer></script>
-    
   </body>
 </html>
