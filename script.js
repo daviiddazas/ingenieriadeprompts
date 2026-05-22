@@ -55,6 +55,14 @@ const moduleDetails = {
       'Propuesta de uso ético y contextualizado.'
     ]
   },
+  'Módulo 10': {
+    subtitle: 'Chatbot tutor para el aula',
+    items: [
+      'Diseño de tutor virtual con Mizou / Botpress.',
+      'Automatiza la atención formativa.',
+      'Propuesta de uso ético y contextualizado.'
+    ]
+  },
   'Módulo 7': {
     subtitle: 'Infografía educativa con IA',
     items: [
