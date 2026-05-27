@@ -15,7 +15,7 @@ const moduleDetails = {
       'Referencia a prácticas éticas en IA aplicada.'
     ]
   },
-  'Módulo 2': {
+  'COSNTRUCCIÓN DE VIDEOS USANDO LA IA': {
     subtitle: 'Video educativo guiado por prompts estructurados',
     items: [
       'Taller práctico con NotebookLM / Google Vids.',
