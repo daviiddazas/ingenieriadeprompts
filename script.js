@@ -7,7 +7,7 @@ const modalFooter = document.querySelector('#moduleModalFooter');
 const closeModalButton = document.querySelector('#closeModalButton');
 
 const moduleDetails = {
-  'Módulo 1': {
+  'GEMA PARA INGENIERIA DE PROMPTS': {
     subtitle: 'Estructura clara de un prompt educativo',
     items: [
       'Plantilla guía para planeación pedagógica.',
