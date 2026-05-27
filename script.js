@@ -23,36 +23,60 @@ const moduleDetails = {
       'Resultado: recursos audiovisuales inclusivos.'
     ]
   },
-  'Módulo 3': {
-    subtitle: 'Guion y pódcast automatizado',
+  'PRODUCCIÓN DE PODCAST USANDO LA IA': {
+    subtitle: 'Guion y pódcast automatizado con IA',
     items: [
       'NoteGPT para diseño de guiones pedagógicos.',
       'Generación de pódcast con enfoque formativo.',
       'Adaptado a lenguajes claros y accesibles.'
     ]
   },
-  'Módulo 4': {
-    subtitle: 'Generación visual con herramientas abiertas',
+  'PRODUCCIÓN DE IMÁGENES USANDO LA IA': {
+    subtitle: 'Generación visual con IA',
     items: [
       'Creación de imágenes y portadas didácticas.',
       'Edición visual para materiales de aula.',
       'Uso responsable de IA visual open source.'
     ]
   },
-  'Módulo 5': {
-    subtitle: 'Búsqueda y validación académica',
+  'CONSTUCCIÓN DE CHATBOT': {
+    subtitle: 'Diseño y despliegue de chatbot con IA',
     items: [
-      'Consensus para artículos revisados por pares.',
-      'Evaluación crítica de fuentes científicas.',
-      'Apoyo a proyectos de investigación educativa.'
+      'Diseño de flujo conversacional.',
+      'Implementación ética de asistentes IA.',
+      'Propuesta de uso en aula y acompañamiento.'
     ]
   },
-  'Módulo 6': {
-    subtitle: 'Chatbot tutor para el aula',
+  'PRODUCCIÓN DE INFOGRAFIAS USANDO LA IA': {
+    subtitle: 'Infografías educativas con IA',
     items: [
-      'Diseño de tutor virtual con Mizou / Botpress.',
-      'Automatiza la atención formativa.',
-      'Propuesta de uso ético y contextualizado.'
+      'Diseño visual para lecciones.',
+      'Comunicación clara de conceptos.',
+      'Adaptación para recursos digitales y físicos.'
+    ]
+  },
+  'CONSTRUCCIÓN DE UN MAPA CONCEPTUAL USANDO LA IA': {
+    subtitle: 'Mapas conceptuales generados con IA',
+    items: [
+      'Herramientas para pensamiento visual.',
+      'Conexión de ideas con IA.',
+      'Organización de conceptos para aprendizaje activo.'
+    ]
+  },
+  'CONSTRUCCIÓN DE PRESENTACIONES CON IA': {
+    subtitle: 'Presentaciones multimedia con IA',
+    items: [
+      'Diseño de diapositivas con IA.',
+      'Recursos visuales para exposición.',
+      'Formatos interactivos y accesibles.'
+    ]
+  },
+  'PRODUCCIÓN DE VIDEO CON UN AVATAR USANDO LA IA': {
+    subtitle: 'Video con avatar narrativo generado por IA',
+    items: [
+      'Guion audiovisual con avatar virtual.',
+      'Producción de video inmersivo.',
+      'Formato para presentación y difusión.'
     ]
   },
   'Módulo 10': {
@@ -61,22 +85,6 @@ const moduleDetails = {
       'Diseño de tutor virtual con Mizou / Botpress.',
       'Automatiza la atención formativa.',
       'Propuesta de uso ético y contextualizado.'
-    ]
-  },
-  'Módulo 7': {
-    subtitle: 'Infografía educativa con IA',
-    items: [
-      'Diseño visual de conceptos clave.',
-      'Exporta piezas listas para clase.',
-      'Comunicación clara para estudiantes.'
-    ]
-  },
-  'Módulo 8': {
-    subtitle: 'Mapas conceptuales y diagramas',
-    items: [
-      'Automatización de esquemas didácticos.',
-      'Diagramas que facilitan la comprensión.',
-      'Herramientas visuales para pensamiento crítico.'
     ]
   }
 };
