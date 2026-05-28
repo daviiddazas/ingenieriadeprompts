@@ -185,6 +185,28 @@ a {
   background: rgba(15, 76, 117, 0.05);
 }
 
+.btn-cobalt {
+  background: #0047AB;
+  color: #fff;
+  border-color: #0047AB;
+}
+
+.btn-cobalt:hover {
+  background: #003580;
+  border-color: #003580;
+}
+
+.btn-islamic-green {
+  background: #169B7D;
+  color: #fff;
+  border-color: #169B7D;
+}
+
+.btn-islamic-green:hover {
+  background: #117a63;
+  border-color: #117a63;
+}
+
 .hero-details {
   display: flex;
   flex-direction: column;
