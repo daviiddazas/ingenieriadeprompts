@@ -146,3 +146,17 @@ window.addEventListener('keydown', (event) => {
     closeModal();
   }
 });
+
+// Configurar reproducción del video al hacer hover
+const videoContainer = document.querySelector('#videoContainer');
+const heroVideo = document.querySelector('#heroVideo');
+
+if (videoContainer && heroVideo) {
+  videoContainer.addEventListener('mouseenter', () => {
+    // Recargar el iframe para forzar la reproducción
+    const currentSrc = heroVideo.src;
+    if (!currentSrc.includes('autoplay=1')) {
+      heroVideo.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1&mute=1';
+    }
+  });
+}
