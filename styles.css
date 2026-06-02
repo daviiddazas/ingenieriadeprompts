@@ -207,10 +207,16 @@ a {
   border-color: #117a63;
 }
 
-.hero-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.btn-rubrica {
+  background: #6a041a;
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-rubrica:hover {
+  background: #520315;
+  border-color: #000;
+}
   min-height: 320px;
 }
 
