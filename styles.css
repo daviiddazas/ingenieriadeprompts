@@ -395,6 +395,19 @@ a {
   color: var(--primary);
 }
 
+/* Resaltar el título de la sección de módulos de forma similar al hero-details */
+.section-header h2{
+  color: #ffffff !important;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  font-weight: 700;
+  background: linear-gradient(90deg, rgba(8,20,34,0.92), rgba(14,34,56,0.86));
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.6rem;
+  display: inline-block;
+  box-shadow: 0 8px 18px rgba(2,10,24,0.35);
+}
+
 .placeholder-box {
   min-height: 200px;
   background: linear-gradient(135deg, rgba(15, 76, 117, 0.05), rgba(50, 130, 184, 0.08));
