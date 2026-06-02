@@ -376,6 +376,19 @@ a {
   min-height: 320px;
 }
 
+/* Resaltar el texto descriptivo dentro de la tarjeta de detalles del hero */
+.hero-details .text-muted {
+  color: #ffffff !important;
+  font-size: 1.125rem; /* aumento sutil respecto a 1.05rem */
+  line-height: 1.6;
+  font-weight: 600;
+  background: linear-gradient(90deg, rgba(8,20,34,0.92), rgba(14,34,56,0.86));
+  padding: 0.8rem 1rem;
+  border-radius: 0.65rem;
+  display: inline-block;
+  box-shadow: 0 8px 18px rgba(2,10,24,0.45);
+}
+
 .section-title {
   margin: 0 0 0.75rem;
   font-size: 1.35rem;
