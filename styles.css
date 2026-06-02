@@ -312,6 +312,13 @@ a {
   transform: translateY(-1px);
 }
 
+/* Hacer que botones con la clase btn-fullwidth ocupen todo el ancho del contenedor */
+.btn-fullwidth {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+
 .btn-primary {
   background: var(--primary);
   color: #fff;
