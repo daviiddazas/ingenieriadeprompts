@@ -15,6 +15,76 @@ Nombre seleccionado: AulaIA: Laboratorio de Prompts
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>                 
+    <div class="network-overlay" aria-hidden="true">
+      <svg id="networkSVG" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <path id="path1" d="M80 720 C240 540 420 540 600 720" />
+          <path id="path2" d="M60 220 C220 120 420 120 780 220" />
+          <path id="path3" d="M200 480 C360 360 760 360 980 480" />
+          <path id="path4" d="M40 520 C260 420 520 420 980 540" />
+        </defs>
+
+        <g class="network-lines" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <use href="#path1" class="line l1" />
+          <use href="#path2" class="line l2" />
+          <use href="#path3" class="line l3" />
+          <use href="#path4" class="line l4" />
+        </g>
+
+        <g class="moving-dots">
+          <circle class="dot d1" r="5" fill="#7fe0ff">
+            <animateMotion dur="6s" repeatCount="indefinite">
+              <mpath href="#path1" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d2" r="4" fill="#ffd380">
+            <animateMotion dur="8s" repeatCount="indefinite" begin="-2s">
+              <mpath href="#path2" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d3" r="4.5" fill="#b5ffdd">
+            <animateMotion dur="7.4s" repeatCount="indefinite" begin="-1.2s">
+              <mpath href="#path3" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d4" r="3.5" fill="#ff9bb1">
+            <animateMotion dur="9s" repeatCount="indefinite" begin="-3s">
+              <mpath href="#path4" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d5" r="3.8" fill="#9be7ff">
+            <animateMotion dur="5.6s" repeatCount="indefinite" begin="-0.6s">
+              <mpath href="#path1" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d6" r="3.2" fill="#ffd9a6">
+            <animateMotion dur="6.8s" repeatCount="indefinite" begin="-1.8s">
+              <mpath href="#path2" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d7" r="4.1" fill="#c8ffe6">
+            <animateMotion dur="7.2s" repeatCount="indefinite" begin="-2.2s">
+              <mpath href="#path3" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d8" r="2.8" fill="#ffb1c9">
+            <animateMotion dur="10s" repeatCount="indefinite" begin="-4s">
+              <mpath href="#path4" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d9" r="3.6" fill="#9be7ff">
+            <animateMotion dur="6.2s" repeatCount="indefinite" begin="-0.9s">
+              <mpath href="#path3" />
+            </animateMotion>
+          </circle>
+          <circle class="dot d10" r="2.6" fill="#ffd380">
+            <animateMotion dur="8.6s" repeatCount="indefinite" begin="-3.7s">
+              <mpath href="#path1" />
+            </animateMotion>
+          </circle>
+        </g>
+      </svg>
+    </div>
     <header class="site-header">
       <div class="container header-inner">
         <a class="brand" href="#">PORTAFOLIO PARA INGENIERIA DE PROMPTS</a>
