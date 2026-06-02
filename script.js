@@ -147,16 +147,20 @@ window.addEventListener('keydown', (event) => {
   }
 });
 
-// Configurar reproducción del video al hacer hover
+// Configurar reproducción del video al hacer hover con sonido activo
 const videoContainer = document.querySelector('#videoContainer');
 const heroVideo = document.querySelector('#heroVideo');
 
 if (videoContainer && heroVideo) {
   videoContainer.addEventListener('mouseenter', () => {
-    // Recargar el iframe para forzar la reproducción
-    const currentSrc = heroVideo.src;
-    if (!currentSrc.includes('autoplay=1')) {
-      heroVideo.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1&mute=1';
-    }
+    // Cambiar la URL para iniciar la reproducción con sonido
+    const baseUrl = 'https://www.youtube.com/embed/LyE7br0rvB0';
+    heroVideo.src = baseUrl + '?autoplay=1';
+  });
+  
+  videoContainer.addEventListener('mouseleave', () => {
+    // Pausar el video cuando se va el cursor
+    const baseUrl = 'https://www.youtube.com/embed/LyE7br0rvB0';
+    heroVideo.src = baseUrl + '?autoplay=0';
   });
 }
