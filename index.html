@@ -337,7 +337,7 @@ Nombre seleccionado: AulaIA: Laboratorio de Prompts
           <h3>Maestría en Educación en Tecnología</h3>
           <p class="text-muted">Universidad Distrital Francisco José de Caldas | Portafolio docente para Bogotá.</p>
           <p class="small text-muted">Este proyecto presenta materiales de aprendizaje con licencias Creative Commons y fuentes abiertas. Todas las herramientas sugeridas respetan principios de uso ético y justificación pedagógica.</p>
-          <p class="small text-muted">Autores: David Daza Salgado y Carlos Mora Mata.</p>
+          <p class="small text-muted">Autores: <span class="author-highlight">David Daza Salgado</span> y <span class="author-highlight">Carlos Mora Mata</span>.</p>
           <p class="small text-muted">Citas y referencias basadas en tecnología de IA responsable, producción hipermedia y diseño curricular para educación media.</p>
         </div>
         <div class="footer-meta">
@@ -347,16 +347,13 @@ Nombre seleccionado: AulaIA: Laboratorio de Prompts
       </div>
     </footer>
 
-    <div class="modal hidden" id="promptAssistantModal" aria-hidden="true" role="dialog" aria-labelledby="promptAssistantModalLabel">
-      <div class="modal-backdrop" data-modal-close></div>
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="promptAssistantModalLabel">PromptBot</h2>
-            <button type="button" class="modal-close" id="closePromptAssistantBtn" aria-label="Cerrar PromptBot">×</button>
-          </div>
-          <div class="modal-body" id="promptAssistantBody"></div>
+    <div id="promptAssistantPanel" class="prompt-assistant-panel hidden" aria-hidden="true" role="dialog" aria-labelledby="promptAssistantPanelLabel">
+      <div class="prompt-assistant-content">
+        <div class="prompt-assistant-header">
+          <h2 class="prompt-assistant-title" id="promptAssistantPanelLabel">PromptBot</h2>
+          <button type="button" class="modal-close" id="closePromptAssistantBtn" aria-label="Cerrar PromptBot">×</button>
         </div>
+        <div class="prompt-assistant-body" id="promptAssistantBody"></div>
       </div>
     </div>
 
