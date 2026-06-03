@@ -174,6 +174,16 @@ let promptBotWindow = null;
 let promptBotForm = null;
 let promptBotInput = null;
 
+const promptTopics = [
+  { id: '1', title: 'Definición de prompt y prompt engineering', topic: 'prompt definición' },
+  { id: '2', title: 'Modelos de lenguaje a gran escala (LLM)', topic: 'llm' },
+  { id: '3', title: 'Metodología 4-D para optimizar prompts', topic: 'metodología 4-d' },
+  { id: '4', title: 'Cadena de pensamiento y razonamiento paso a paso', topic: 'cadena de pensamiento' },
+  { id: '5', title: 'Roles, formatos y aplicación práctica de prompts', topic: 'roles' },
+  { id: '6', title: 'Ética y uso responsable de prompts', topic: 'ética' },
+  { id: '7', title: 'Aplicaciones de IA en educación y otros sectores', topic: 'aplicaciones' }
+];
+
 const initPromptAssistant = () => {
   if (promptAssistantBody.innerHTML) return;
   promptAssistantBody.innerHTML = `
@@ -187,7 +197,8 @@ const initPromptAssistant = () => {
   promptBotForm = document.querySelector('#promptBotForm');
   promptBotInput = document.querySelector('#promptBotInput');
   attachPromptFormListener();
-  addPromptBotMessage('Hola, soy el asistente de ingeniería de prompts. Pregunta aquí sobre definición, características, tipos o cómo funcionan los prompts para educación.', 'bot');
+  addPromptBotMessage('¡Hola! Soy tu asistente de ingeniería de prompts. Puedo ayudarte con varios temas clave para que tus preguntas a la IA sean más claras y efectivas. Elige una opción escribiendo el número o haz tu pregunta directamente:', 'bot');
+  addPromptBotMessage('1. Definición de prompt y prompt engineering\n2. Modelos de lenguaje a gran escala (LLM)\n3. Metodología 4-D para optimizar prompts\n4. Cadena de pensamiento y razonamiento paso a paso\n5. Roles, formatos y aplicación práctica de prompts\n6. Ética y uso responsable de prompts\n7. Aplicaciones de IA en educación y otros sectores', 'bot');
 };
 
 const attachPromptFormListener = () => {
@@ -255,6 +266,71 @@ const promptKnowledge = [
     topic: 'educación',
     keywords: ['educativo', 'educación', 'estudiantes', 'aula'],
     answer: 'En educación, los prompts permiten crear contenido personalizado, generar preguntas, explicar conceptos complejos y facilitar la interacción entre estudiantes y tecnologías basadas en inteligencia artificial.'
+  },
+  {
+    topic: 'prompt definición',
+    keywords: ['qué es un prompt', 'definición de prompt', 'prompt para chatgpt', 'prompt'],
+    answer: 'Un prompt es el texto o instrucción inicial que se le da al modelo para generar una respuesta. Actúa como un disparador que indica el tema, estilo, formato y tipo de respuesta que se espera de la IA.'
+  },
+  {
+    topic: 'llm',
+    keywords: ['llm', 'modelos de lenguaje', 'modelos de lenguaje a gran escala', 'large language model'],
+    answer: 'Los LLM son modelos de lenguaje a gran escala entrenados con grandes corpus de texto para predecir tokens y generar lenguaje. Aprenden patrones de gramática, semántica y contexto para realizar tareas como responder preguntas, resumir o crear contenido.'
+  },
+  {
+    topic: 'ingeniería de prompts',
+    keywords: ['ingeniería de prompts', 'ingenieria de prompts', 'prompt engineering', 'fundamentos'],
+    answer: 'La ingeniería de prompts es el proceso de diseñar, experimentar y optimizar instrucciones para que los modelos de IA generativa produzcan respuestas más precisas, relevantes y útiles.'
+  },
+  {
+    topic: 'metodología 4-d',
+    keywords: ['4-d', '4 d', 'metodología 4d', 'metodologia 4-d', '4d'],
+    answer: 'La metodología 4-D para prompts incluye: Deconstruir la tarea, Diagnosticar la claridad, Desarrollar la mejor instrucción y Entregar resultados optimizados tras evaluar y ajustar la salida.'
+  },
+  {
+    topic: 'cadena de pensamiento',
+    keywords: ['cadena de pensamiento', 'chain of thought', 'cot', 'pensemos paso a paso', 'explica paso a paso'],
+    answer: 'La cadena de pensamiento es una técnica que hace que el modelo razone de forma secuencial. Al pedirle pasos intermedios, mejora respuestas a tareas complejas y cuida la lógica detrás de las soluciones.'
+  },
+  {
+    topic: 'auto-consistencia',
+    keywords: ['auto-consistencia', 'auto consistencia', 'autoconsistencia', 'consistencia'],
+    answer: 'Auto-consistencia consiste en generar varias respuestas y elegir la más coherente. Esta técnica ayuda a filtrar resultados inconsistentes y encontrar opciones más fiables.'
+  },
+  {
+    topic: 'roles',
+    keywords: ['rol', 'roles', 'actúa como', 'actua como', 'asumir rol'],
+    answer: 'Asignar un rol en el prompt, como pedir al modelo que actúe como profesor, investigador o diseñador, guía el tono, el estilo y la profundidad de la respuesta.'
+  },
+  {
+    topic: 'formato de salida',
+    keywords: ['formato de salida', 'tipo de salida', 'tabla', 'lista', 'ensayo', 'código', 'rúbrica'],
+    answer: 'Definir el formato de salida en el prompt permite controlar mejor la estructura de la respuesta: lista, tabla, resumen, código, rúbrica u otro formato específico.'
+  },
+  {
+    topic: 'iterar y refinar',
+    keywords: ['iterar', 'refinar', 'ajustar', 'mejorar prompt', 'optimizar prompt'],
+    answer: 'Iterar y refinar un prompt implica probar respuestas, detectar errores y ajustar la instrucción. La práctica constante mejora la precisión y reduce ambigüedades.'
+  },
+  {
+    topic: 'inteligencia artificial',
+    keywords: ['inteligencia artificial', 'ia', 'artificial', 'modelos', 'aplicaciones de ia'],
+    answer: 'La inteligencia artificial estudia sistemas que pueden realizar tareas que normalmente requieren inteligencia humana. En investigación, se analizan modelos, datos y aplicaciones para mejorar la toma de decisiones y la automatización responsable.'
+  },
+  {
+    topic: 'investigación en ia',
+    keywords: ['investigación en ia', 'investigacion en ia', 'research', 'metodología de investigación'],
+    answer: 'La investigación en IA explora técnicas, metodologías y resultados para avanzar en modelos más precisos, explicables y éticos. Se enfoca en innovaciones, validación experimental y aplicaciones de impacto social.'
+  },
+  {
+    topic: 'aplicaciones',
+    keywords: ['aplicaciones', 'uso', 'casos de uso', 'sectores', 'educación', 'salud', 'marketing'],
+    answer: 'Las aplicaciones de IA incluyen educación, salud, marketing, manufactura y muchos otros sectores. Una buena prompt guía la IA para generar soluciones útiles en contextos específicos.'
+  },
+  {
+    topic: 'ética',
+    keywords: ['ética', 'etica', 'responsable', 'sesgo', 'transparencia', 'privacidad'],
+    answer: 'El diseño de prompts también debe considerar la ética: evitar sesgos, proteger la privacidad y garantizar que las respuestas sean transparentes y apropiadas para el contexto.'
   }
 ];
 
@@ -314,11 +390,26 @@ window.addEventListener('keydown', (event) => {
 });
 
 const answerPromptQuery = (query) => {
-  const normalized = query.toLowerCase();
+  const normalized = query.toLowerCase().trim();
+  const selectedTopic = promptTopics.find((item) => {
+    return normalized === item.id || normalized === `opción ${item.id}` || normalized === `opcion ${item.id}` || normalized.startsWith(`${item.id} `) || normalized.includes(item.topic) || normalized.includes(item.title.toLowerCase());
+  });
+
+  if (selectedTopic) {
+    const matched = promptKnowledge.find((item) => item.topic === selectedTopic.topic);
+    if (matched) {
+      return `Has elegido la opción ${selectedTopic.id}: ${matched.answer}`;
+    }
+  }
+
+  if (['opciones', 'temas', 'ayuda', 'menu', 'lista'].some((word) => normalized.includes(word))) {
+    return `Puedo ayudarte con estos temas:\n${promptTopics.map((item) => `${item.id}. ${item.title}`).join('\n')}\nEscribe el número del tema o haz una pregunta específica.`;
+  }
+
   const matched = promptKnowledge.find((item) => item.keywords.some((keyword) => normalized.includes(keyword)));
   if (matched) {
     return matched.answer;
   }
 
-  return 'Puedo ayudarte con definiciones y características de prompts, tipos de prompts, shot prompting y cómo funcionan los prompts en educación. Por favor, formula tu pregunta mencionando algún concepto como claridad, contexto, especificidad, tipos o funcionamiento.';
+  return `Puedo ayudarte con estos temas:\n${promptTopics.map((item) => `${item.id}. ${item.title}`).join('\n')}\nEscribe un número o una pregunta sobre alguno de ellos.`;
 };
