@@ -165,7 +165,7 @@ if (videoContainer && heroVideo) {
   });
 }
 
-const promptAssistantModal = document.querySelector('#promptAssistantModal');
+const promptAssistantPanel = document.querySelector('#promptAssistantPanel');
 const promptAssistantBody = document.querySelector('#promptAssistantBody');
 const openPromptAssistantBtn = document.querySelector('#openPromptAssistantBtn');
 const closePromptAssistantBtn = document.querySelector('#closePromptAssistantBtn');
@@ -377,17 +377,17 @@ const addPromptBotMessage = (text, sender) => {
 };
 
 const closePromptAssistant = () => {
-  if (promptAssistantModal) {
-    promptAssistantModal.classList.add('hidden');
-    promptAssistantModal.setAttribute('aria-hidden', 'true');
+  if (promptAssistantPanel) {
+    promptAssistantPanel.classList.add('hidden');
+    promptAssistantPanel.setAttribute('aria-hidden', 'true');
   }
 };
 
 const openPromptAssistant = () => {
   initPromptAssistant();
-  if (promptAssistantModal) {
-    promptAssistantModal.classList.remove('hidden');
-    promptAssistantModal.setAttribute('aria-hidden', 'false');
+  if (promptAssistantPanel) {
+    promptAssistantPanel.classList.remove('hidden');
+    promptAssistantPanel.setAttribute('aria-hidden', 'false');
   }
   if (promptBotInput) {
     setTimeout(() => promptBotInput.focus(), 300);
@@ -402,15 +402,8 @@ if (closePromptAssistantBtn) {
   closePromptAssistantBtn.addEventListener('click', closePromptAssistant);
 }
 
-if (promptAssistantModal) {
-  const backdrop = promptAssistantModal.querySelector('[data-modal-close]');
-  if (backdrop) {
-    backdrop.addEventListener('click', closePromptAssistant);
-  }
-}
-
 window.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && promptAssistantModal && !promptAssistantModal.classList.contains('hidden')) {
+  if (event.key === 'Escape' && promptAssistantPanel && !promptAssistantPanel.classList.contains('hidden')) {
     closePromptAssistant();
   }
 });
