@@ -533,6 +533,122 @@ a {
   font-size: 1rem;
 }
 
+.prompt-bot-window {
+  min-height: 260px;
+  max-height: 420px;
+  background: #f7fbff;
+  border: 1px solid rgba(15, 76, 117, 0.14);
+  border-radius: 1rem;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.prompt-bot-welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.prompt-bot-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.prompt-bot-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.prompt-bot-topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.prompt-bot-topic-item {
+  margin: 0;
+}
+
+.prompt-bot-topic-btn {
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(15, 76, 117, 0.16);
+  border-radius: 0.85rem;
+  color: var(--text-dark);
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-size: 0.94rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+
+.prompt-bot-topic-btn:hover,
+.prompt-bot-topic-btn:focus-visible {
+  background: rgba(50, 130, 184, 0.08);
+  border-color: var(--secondary);
+  transform: translateX(2px);
+}
+
+#promptAssistantModal.modal {
+  position: fixed;
+  inset: auto auto 1.5rem 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  z-index: 65;
+  pointer-events: none;
+}
+
+#promptAssistantModal.modal .modal-backdrop {
+  display: none;
+}
+
+#promptAssistantModal.modal .modal-dialog {
+  width: min(360px, 100%);
+  max-width: 360px;
+  margin: 0;
+  pointer-events: auto;
+}
+
+#promptAssistantModal.modal .modal-content {
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(15, 24, 48, 0.18);
+}
+
+#promptAssistantModal.modal .modal-header {
+  padding: 1rem 1rem 0.75rem;
+}
+
+#promptAssistantModal.modal .modal-body {
+  padding: 0 1rem 1rem;
+}
+
+#promptAssistantModal.modal .modal-header,
+#promptAssistantModal.modal .modal-body {
+  background: transparent;
+}
+
+#promptAssistantModal.modal .modal-title {
+  color: var(--primary);
+}
+
+#promptAssistantModal.modal .modal-close {
+  background: rgba(15, 76, 117, 0.08);
+  color: var(--text-dark);
+}
+
+#promptAssistantModal.modal .modal-close:hover {
+  background: rgba(15, 76, 117, 0.16);
+}
+
 .chat-toggle-btn {
   position: fixed;
   right: 1.5rem;

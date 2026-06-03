@@ -187,9 +187,9 @@ const promptTopics = [
 const initPromptAssistant = () => {
   if (promptAssistantBody.innerHTML) return;
   promptAssistantBody.innerHTML = `
-    <div id="promptBotWindow" style="min-height: 300px; background: #f7fbff; border: 1px solid rgba(15, 76, 117, 0.12); border-radius: 1rem; padding: 1.25rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 1rem;"></div>
+    <div id="promptBotWindow" class="prompt-bot-window"></div>
     <form id="promptBotForm" class="prompt-bot-form">
-      <input id="promptBotInput" class="prompt-bot-input" type="text" placeholder="Escribe tu pregunta sobre prompts..." autocomplete="off" required />
+      <input id="promptBotInput" class="prompt-bot-input" type="text" placeholder="Escribe tu pregunta o el número de tema..." autocomplete="off" required />
       <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
   `;
@@ -197,8 +197,34 @@ const initPromptAssistant = () => {
   promptBotForm = document.querySelector('#promptBotForm');
   promptBotInput = document.querySelector('#promptBotInput');
   attachPromptFormListener();
-  addPromptBotMessage('¡Hola! Soy tu asistente de ingeniería de prompts. Puedo ayudarte con varios temas clave para que tus preguntas a la IA sean más claras y efectivas. Elige una opción escribiendo el número o haz tu pregunta directamente:', 'bot');
-  addPromptBotMessage('1. Definición de prompt y prompt engineering\n2. Modelos de lenguaje a gran escala (LLM)\n3. Metodología 4-D para optimizar prompts\n4. Cadena de pensamiento y razonamiento paso a paso\n5. Roles, formatos y aplicación práctica de prompts\n6. Ética y uso responsable de prompts\n7. Aplicaciones de IA en educación y otros sectores', 'bot');
+  renderPromptBotWelcome();
+};
+
+const renderPromptBotWelcome = () => {
+  const topicButtons = promptTopics.map((item) => `
+      <li class="prompt-bot-topic-item">
+        <button type="button" class="prompt-bot-topic-btn" data-topic="${item.topic}">${item.id}. ${item.title}</button>
+      </li>
+  `).join('');
+
+  promptBotWindow.innerHTML = `
+    <div class="prompt-bot-welcome">
+      <div class="prompt-bot-title">Hola, soy <strong>PromptBot</strong>.</div>
+      <div class="prompt-bot-text">Puedo ayudarte con estos temas. Toca una opción o escribe un número:</div>
+      <ul class="prompt-bot-topic-list">
+        ${topicButtons}
+      </ul>
+    </div>
+  `;
+
+  promptBotWindow.querySelectorAll('.prompt-bot-topic-btn').forEach((button) => {
+    button.addEventListener('click', () => {
+      const topic = button.dataset.topic;
+      addPromptBotMessage(button.textContent, 'user');
+      const answer = answerPromptQuery(topic);
+      setTimeout(() => addPromptBotMessage(answer, 'bot'), 250);
+    });
+  });
 };
 
 const attachPromptFormListener = () => {
