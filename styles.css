@@ -498,6 +498,58 @@ a {
   box-shadow: 0 18px 40px rgba(15, 76, 117, 0.12);
 }
 
+.prompt-bot-message {
+  max-width: min(100%, 42rem);
+  padding: 0.95rem 1rem;
+  border-radius: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.prompt-bot-message.bot {
+  background: #e5f3ff;
+  color: var(--text-dark);
+}
+
+.prompt-bot-message.user {
+  background: #0f4c75;
+  color: #fff;
+  margin-left: auto;
+}
+
+.prompt-bot-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(15, 76, 117, 0.12);
+}
+
+.prompt-bot-input {
+  border: 1px solid rgba(15, 76, 117, 0.18);
+  border-radius: 0.95rem;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+}
+
+.btn-accent {
+  background: #9c27b0;
+  color: #fff;
+  border-color: #9c27b0;
+}
+
+.btn-accent:hover {
+  background: #7b1fa2;
+  border-color: #7b1fa2;
+}
+
+@media (max-width: 650px) {
+  .prompt-bot-form {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card-content {
   padding: 1.75rem;
   display: flex;
